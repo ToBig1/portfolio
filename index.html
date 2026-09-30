@@ -3,606 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tobi Oloyede | UX Research Portfolio</title>
+<title>Tobi Oloyede | Product and UX Research Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0f0f0f;
-    --paper: #f7f4ef;
-    --cream: #ede9e1;
-    --rust: #b85c38;
-    --rust-light: #d4724e;
-    --sage: #5a7a6a;
-    --slate: #3d4f5c;
-    --muted: #7a7269;
-    --line: #d4cfc6;
+    --ink: #1a1d2e;
+    --paper: #f4f5f8;
+    --cream: #e8eaf1;
+    --rust: #3a3f9e;
+    --rust-light: #8f95e8;
+    --sage: #2b7a78;
+    --slate: #3a4152;
+    --muted: #6b7080;
+    --line: #d7dae3;
     --white: #ffffff;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    line-height: 1.6;
-    font-size: 16px;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: var(--paper);
-    border-bottom: 1px solid var(--line);
-    padding: 0 48px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .nav-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 18px;
-    color: var(--ink);
-    letter-spacing: 0.01em;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--muted);
-    text-decoration: none;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; font-size: 16px; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--paper); border-bottom: 1px solid var(--line); padding: 0 48px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--ink); letter-spacing: 0.01em; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--rust); }
-
-  /* HERO */
-  .hero {
-    padding: 140px 48px 80px;
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: end;
-  }
-
-  .hero-left h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(48px, 6vw, 76px);
-    line-height: 1.05;
-    color: var(--ink);
-    margin-bottom: 8px;
-  }
-
-  .hero-left h1 em {
-    font-style: italic;
-    color: var(--rust);
-  }
-
-  .hero-subtitle {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 28px;
-  }
-
-  .hero-bio {
-    font-size: 17px;
-    color: var(--slate);
-    line-height: 1.75;
-    max-width: 480px;
-  }
-
-  .hero-right {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-bottom: 8px;
-  }
-
-  .hero-stat {
-    border-left: 3px solid var(--rust);
-    padding-left: 20px;
-  }
-
-  .hero-stat .num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 36px;
-    color: var(--ink);
-    line-height: 1;
-  }
-
-  .hero-stat .label {
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 4px;
-  }
-
-  .hero-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 32px;
-  }
-
-  .tag {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border: 1px solid var(--line);
-    border-radius: 2px;
-    color: var(--muted);
-    background: var(--white);
-  }
-
-  /* SECTION WRAPPER */
-  .section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 80px 48px;
-  }
-
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: 16px;
-  }
-
-  .section-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(28px, 3vw, 40px);
-    color: var(--ink);
-    margin-bottom: 48px;
-    line-height: 1.2;
-  }
-
-  .divider {
-    border: none;
-    border-top: 1px solid var(--line);
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  /* CASE STUDY CARDS */
-  .case-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .case-card {
-    background: var(--white);
-    border: 1px solid var(--line);
-    padding: 48px;
-    cursor: pointer;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .case-card::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
-    background: var(--rust);
-    transform: scaleY(0);
-    transition: transform 0.25s ease;
-    transform-origin: bottom;
-  }
-
+  .hero { padding: 140px 48px 80px; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
+  .hero-left h1 { font-family: 'DM Serif Display', serif; font-size: clamp(48px, 6vw, 76px); line-height: 1.05; color: var(--ink); margin-bottom: 8px; }
+  .hero-left h1 em { font-style: italic; color: var(--rust); }
+  .hero-subtitle { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
+  .hero-bio { font-size: 17px; color: var(--slate); line-height: 1.75; max-width: 480px; }
+  .hero-right { display: flex; flex-direction: column; gap: 20px; padding-bottom: 8px; }
+  .hero-stat { border-left: 3px solid var(--rust); padding-left: 20px; }
+  .hero-stat .num { font-family: 'DM Serif Display', serif; font-size: 36px; color: var(--ink); line-height: 1; }
+  .hero-stat .label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+  .tag { font-size: 12px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; padding: 6px 14px; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); background: var(--white); }
+  .section { max-width: 1100px; margin: 0 auto; padding: 80px 48px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust); margin-bottom: 16px; }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 3vw, 40px); color: var(--ink); margin-bottom: 48px; line-height: 1.2; }
+  .divider { border: none; border-top: 1px solid var(--line); max-width: 1100px; margin: 0 auto; }
+  .case-grid { display: flex; flex-direction: column; gap: 2px; }
+  .case-card { background: var(--white); border: 1px solid var(--line); padding: 48px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
+  .case-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--rust); transform: scaleY(0); transition: transform 0.25s ease; transform-origin: bottom; }
   .case-card:hover::before { transform: scaleY(1); }
   .case-card:hover { border-color: var(--rust); box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
-
   .case-card.open::before { transform: scaleY(1); }
   .case-card.open { border-color: var(--rust); }
-
-  .case-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 24px;
-  }
-
-  .case-meta {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-  }
-
-  .case-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--rust);
-    letter-spacing: 0.1em;
-  }
-
-  .case-org {
-    font-size: 12px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: var(--muted);
-  }
-
-  .case-duration {
-    font-size: 12px;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-  }
-
-  .case-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(20px, 2.5vw, 28px);
-    color: var(--ink);
-    line-height: 1.2;
-    max-width: 700px;
-    margin-bottom: 12px;
-  }
-
-  .case-summary {
-    font-size: 15px;
-    color: var(--slate);
-    max-width: 680px;
-    line-height: 1.7;
-  }
-
-  .case-toggle {
-    width: 36px;
-    height: 36px;
-    border: 1px solid var(--line);
-    background: var(--paper);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: background 0.2s, border-color 0.2s;
-    font-size: 18px;
-    color: var(--muted);
-    cursor: pointer;
-  }
-
-  .case-card.open .case-toggle {
-    background: var(--rust);
-    border-color: var(--rust);
-    color: white;
-    transform: rotate(45deg);
-  }
-
-  /* CASE BODY */
-  .case-body {
-    display: none;
-    margin-top: 40px;
-    padding-top: 40px;
-    border-top: 1px solid var(--line);
-  }
-
+  .case-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+  .case-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+  .case-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--rust); letter-spacing: 0.1em; }
+  .case-org { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+  .case-duration { font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; }
+  .case-badge { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); background: var(--sage); padding: 3px 10px; border-radius: 2px; }
+  .case-title { font-family: 'DM Serif Display', serif; font-size: clamp(20px, 2.5vw, 28px); color: var(--ink); line-height: 1.2; max-width: 700px; margin-bottom: 12px; }
+  .case-summary { font-size: 15px; color: var(--slate); max-width: 680px; line-height: 1.7; }
+  .case-link { display: inline-block; margin-top: 18px; font-size: 13px; font-weight: 600; color: var(--white); background: var(--rust); padding: 9px 18px; border-radius: 2px; text-decoration: none; letter-spacing: 0.03em; }
+  .case-link:hover, .case-link:focus-visible { background: var(--ink); }
+  .case-toggle { width: 36px; height: 36px; border: 1px solid var(--line); background: var(--paper); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s, border-color 0.2s; font-size: 18px; color: var(--muted); cursor: pointer; }
+  .case-card.open .case-toggle { background: var(--rust); border-color: var(--rust); color: white; transform: rotate(45deg); }
+  .case-body { display: none; margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--line); }
   .case-card.open .case-body { display: block; }
-
-  .case-body-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 60px;
-  }
-
-  .body-section {
-    margin-bottom: 36px;
-  }
-
-  .body-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: 12px;
-  }
-
-  .body-text {
-    font-size: 15px;
-    color: var(--slate);
-    line-height: 1.75;
-  }
-
+  .case-body-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }
+  .body-section { margin-bottom: 36px; }
+  .body-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rust); margin-bottom: 12px; }
+  .body-text { font-size: 15px; color: var(--slate); line-height: 1.75; }
   .body-text p + p { margin-top: 12px; }
-
-  .phase-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .phase-item {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-  }
-
-  .phase-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--rust);
-    background: rgba(184, 92, 56, 0.08);
-    padding: 4px 8px;
-    border-radius: 2px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .phase-text {
-    font-size: 14px;
-    color: var(--slate);
-    line-height: 1.6;
-  }
-
-  .phase-text strong {
-    color: var(--ink);
-    font-weight: 600;
-    display: block;
-    margin-bottom: 2px;
-  }
-
-  .insight-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .insight-item {
-    font-size: 14px;
-    color: var(--slate);
-    line-height: 1.6;
-    padding-left: 20px;
-    position: relative;
-  }
-
-  .insight-item::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 9px;
-    width: 8px;
-    height: 2px;
-    background: var(--rust);
-  }
-
-  .sidebar-card {
-    background: var(--cream);
-    padding: 28px;
-    border-radius: 2px;
-    margin-bottom: 20px;
-  }
-
-  .sidebar-card h4 {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: 14px;
-  }
-
-  .sidebar-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .pill {
-    font-size: 12px;
-    padding: 4px 10px;
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    color: var(--slate);
-  }
-
-  .impact-callout {
-    background: var(--rust);
-    color: white;
-    padding: 28px;
-    border-radius: 2px;
-    margin-bottom: 20px;
-  }
-
-  .impact-callout h4 {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    opacity: 0.8;
-    margin-bottom: 10px;
-  }
-
-  .impact-callout p {
-    font-size: 14px;
-    line-height: 1.6;
-    opacity: 0.95;
-  }
-
-  /* CURRENT WORK */
-  .current-block {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 56px;
-    margin-bottom: 2px;
-  }
-
+  .phase-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .phase-item { display: flex; gap: 16px; align-items: flex-start; }
+  .phase-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--rust); background: rgba(58, 63, 158, 0.08); padding: 4px 8px; border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
+  .phase-text { font-size: 14px; color: var(--slate); line-height: 1.6; }
+  .phase-text strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: 2px; }
+  .insight-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .insight-item { font-size: 14px; color: var(--slate); line-height: 1.6; padding-left: 20px; position: relative; }
+  .insight-item::before { content: ''; position: absolute; left: 0; top: 9px; width: 8px; height: 2px; background: var(--rust); }
+  .sidebar-card { background: var(--cream); padding: 28px; border-radius: 2px; margin-bottom: 20px; }
+  .sidebar-card h4 { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; }
+  .sidebar-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill { font-size: 12px; padding: 4px 10px; background: var(--white); border: 1px solid var(--line); border-radius: 20px; color: var(--slate); }
+  .impact-callout { background: var(--rust); color: white; padding: 28px; border-radius: 2px; margin-bottom: 20px; }
+  .impact-callout h4 { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.8; margin-bottom: 10px; }
+  .impact-callout p { font-size: 14px; line-height: 1.6; opacity: 0.95; }
+  .current-block { background: var(--ink); color: var(--paper); padding: 56px; margin-bottom: 2px; }
   .current-block .section-label { color: var(--rust-light); }
   .current-block .section-title { color: var(--paper); margin-bottom: 28px; }
-
-  .current-block .body-text { color: rgba(247,244,239,0.8); }
-
-  .current-bullets {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 28px;
-  }
-
-  .current-bullets li {
-    font-size: 14px;
-    color: rgba(247,244,239,0.75);
-    padding-left: 20px;
-    position: relative;
-    line-height: 1.6;
-  }
-
-  .current-bullets li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 9px;
-    width: 8px;
-    height: 2px;
-    background: var(--rust-light);
-  }
-
-  /* ABOUT */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 80px;
-    align-items: start;
-  }
-
-  .about-text {
-    font-size: 17px;
-    color: var(--slate);
-    line-height: 1.8;
-  }
-
+  .current-block .body-text { color: rgba(244,245,248,0.8); }
+  .current-sub { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--paper); margin-top: 40px; margin-bottom: 12px; }
+  .current-bullets { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+  .current-bullets li { font-size: 14px; color: rgba(244,245,248,0.75); padding-left: 20px; position: relative; line-height: 1.6; }
+  .current-bullets li::before { content: ''; position: absolute; left: 0; top: 9px; width: 8px; height: 2px; background: var(--rust-light); }
+  .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: start; }
+  .about-text { font-size: 17px; color: var(--slate); line-height: 1.8; }
   .about-text p + p { margin-top: 20px; }
-
-  .skills-group {
-    margin-bottom: 28px;
-  }
-
-  .skills-group h4 {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: 10px;
-  }
-
-  .skills-group ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .skills-group li {
-    font-size: 14px;
-    color: var(--slate);
-    padding-left: 16px;
-    position: relative;
-  }
-
-  .skills-group li::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 8px;
-    width: 6px; height: 2px;
-    background: var(--line);
-  }
-
-  /* PUBLICATIONS */
-  .pub-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .pub-item {
-    padding: 24px;
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--sage);
-    font-size: 14px;
-    color: var(--slate);
-    line-height: 1.7;
-  }
-
-  .pub-item .pub-title {
-    font-weight: 600;
-    color: var(--ink);
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  /* FOOTER */
-  footer {
-    border-top: 1px solid var(--line);
-    padding: 48px;
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  footer .footer-name {
-    font-family: 'DM Serif Display', serif;
-    font-size: 20px;
-    color: var(--ink);
-  }
-
-  footer .footer-contact {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.8;
-    text-align: right;
-  }
-
-  footer a {
-    color: var(--rust);
-    text-decoration: none;
-  }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-left, .hero-right {
-    animation: fadeUp 0.7s ease forwards;
-  }
-
+  .skills-group { margin-bottom: 28px; }
+  .skills-group h4 { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rust); margin-bottom: 10px; }
+  .skills-group ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .skills-group li { font-size: 14px; color: var(--slate); padding-left: 16px; position: relative; }
+  .skills-group li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 2px; background: var(--line); }
+  .pub-list { display: flex; flex-direction: column; gap: 20px; }
+  .pub-item { padding: 24px; background: var(--white); border: 1px solid var(--line); border-left: 3px solid var(--sage); font-size: 14px; color: var(--slate); line-height: 1.7; }
+  .pub-item .pub-title { font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+  footer { border-top: 1px solid var(--line); padding: 48px; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  footer .footer-name { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); }
+  footer .footer-contact { font-size: 13px; color: var(--muted); line-height: 1.8; text-align: right; }
+  footer a { color: var(--rust); text-decoration: none; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-left, .hero-right { animation: fadeUp 0.7s ease forwards; }
   .hero-right { animation-delay: 0.15s; opacity: 0; }
   .hero-left { opacity: 0; }
-
+  @media (prefers-reduced-motion: reduce) { .hero-left, .hero-right { animation: none; opacity: 1; } }
   @media (max-width: 768px) {
     nav { padding: 0 24px; }
     .nav-links { display: none; }
@@ -620,7 +127,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">Tobi Oloyede</div>
   <ul class="nav-links">
@@ -632,65 +138,219 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-left">
-    <p class="hero-subtitle">UX Researcher &amp; Mixed-Methods Specialist</p>
+    <p class="hero-subtitle">Agile Product Manager &amp; UX Researcher</p>
     <h1>Research that <em>moves</em> people, products, and policy.</h1>
-    <p class="hero-bio" style="margin-top:24px;">I am Tobi Oloyede, a UX Researcher and DrPH candidate whose work sits at the intersection of health equity, community experience, and human-centered product design. I bring a researcher's rigor and a storyteller's instinct to understanding users across clinical, civic, and digital contexts.</p>
+    <p class="hero-bio" style="margin-top:24px;">I am Tobi Oloyede, a product builder and DrPH candidate who turns deep user research into products people can use. I define the problem, prioritize what matters, and take ideas from evidence to live prototype, with a focus on health equity and communities that products too often overlook.</p>
     <div class="hero-tags">
-      <span class="tag">Evaluative Research</span>
+      <span class="tag">Agile / Scrum</span>
+      <span class="tag">Product Strategy</span>
+      <span class="tag">0-to-1 Discovery</span>
+      <span class="tag">AI Prototyping</span>
       <span class="tag">Generative Research</span>
-      <span class="tag">Participatory Methods</span>
       <span class="tag">Usability Testing</span>
       <span class="tag">Mixed Methods</span>
       <span class="tag">Health Equity</span>
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-stat">
-      <div class="num">5+</div>
-      <div class="label">Years applied research experience</div>
-    </div>
-    <div class="hero-stat">
-      <div class="num">188+</div>
-      <div class="label">Research participants across studies</div>
-    </div>
-    <div class="hero-stat">
-      <div class="num">4</div>
-      <div class="label">Peer-reviewed publications</div>
-    </div>
-    <div class="hero-stat">
-      <div class="num">6</div>
-      <div class="label">Organizational research contexts</div>
-    </div>
+    <div class="hero-stat"><div class="num">7+</div><div class="label">Years of qualitative and user research experience</div></div>
+    <div class="hero-stat"><div class="num">2</div><div class="label">Products built from research to working prototype</div></div>
+    <div class="hero-stat"><div class="num">188+</div><div class="label">Research participants across studies</div></div>
+    <div class="hero-stat"><div class="num">7</div><div class="label">Peer-reviewed journal articles, plus book chapters and commentaries</div></div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- CASE STUDIES -->
 <div class="section" id="work">
   <p class="section-label">Selected Work</p>
   <h2 class="section-title">Case Studies</h2>
-
   <div class="case-grid">
 
-    <!-- CASE 1: PlaceCal / Geeks for Social Change -->
+    <!-- CASE 1: Clearline -->
     <div class="case-card" onclick="toggleCase(this)">
       <div class="case-header">
         <div>
           <div class="case-meta">
             <span class="case-num">01</span>
+            <span class="case-org">Clearline (HXR Labs)</span>
+            <span class="case-duration">2026</span>
+            <span class="case-badge">Live prototype</span>
+          </div>
+          <h3 class="case-title">Clearline: Turning Dissertation Research into a Breastfeeding Support App</h3>
+          <p class="case-summary">A breastfeeding support prototype grounded in my doctoral research with Black mothers, built with Claude and v0 and taken from research findings to a live, testable web app.</p>
+          <a class="case-link" href="https://clearline-beryl-pi.vercel.app" target="_blank" rel="noopener" onclick="event.stopPropagation()">Open the live app</a>
+        </div>
+        <div class="case-toggle">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-grid">
+          <div>
+            <div class="body-section">
+              <p class="body-label">The Challenge</p>
+              <div class="body-text">
+                <p>My dissertation research with 22 Black mothers in Georgia, 11 African American and 11 African immigrant women, explored their breastfeeding experiences and the support around them. The research surfaced needs that existing tools were not meeting.</p>
+                <p>The product question was whether those findings could become something mothers could actually use, and how quickly I could get a working version in front of users to learn from real interaction rather than static mockups.</p>
+              </div>
+            </div>
+            <div class="body-section">
+              <p class="body-label">Process</p>
+              <ul class="phase-list">
+                <li class="phase-item"><span class="phase-num">01</span><div class="phase-text"><strong>Research Foundation</strong>Drew product requirements directly from qualitative findings across 22 participant interviews, keeping the needs of both African American and African immigrant mothers in view.</div></li>
+                <li class="phase-item"><span class="phase-num">02</span><div class="phase-text"><strong>Requirements with Claude</strong>Used Claude to structure research themes into user needs, flows, and requirements, feeding it specific findings and tone requirements rather than generic prompts.</div></li>
+                <li class="phase-item"><span class="phase-num">03</span><div class="phase-text"><strong>Build with v0</strong>Generated and iterated the interface in v0 using small, scoped requests, then deployed it as a live web app.</div></li>
+                <li class="phase-item"><span class="phase-num">04</span><div class="phase-text"><strong>Visual Identity</strong>Created a Terracotta and Plum identity designed to feel warm and trustworthy in a sensitive health context.</div></li>
+                <li class="phase-item"><span class="phase-num">05</span><div class="phase-text"><strong>Test and Refine</strong>Ran testing and refinement cycles on the live prototype, iterating on flows and content based on user feedback.</div></li>
+              </ul>
+            </div>
+            <div class="body-section">
+              <p class="body-label">What I Learned Building with AI</p>
+              <ul class="insight-list">
+                <li class="insight-item">Context drives quality. Generic prompts produced generic health apps; specific research themes and participant needs produced output that reflected the mothers I studied.</li>
+                <li class="insight-item">Small, scoped requests beat asking for a full app at once.</li>
+                <li class="insight-item">In health, every generated line needs human review for accuracy and cultural fit, because confident but wrong content erodes trust.</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="impact-callout">
+              <h4>Outcome</h4>
+              <p>A live, testable prototype built end to end on my own, connecting doctoral research directly to a product mothers can use and respond to.</p>
+            </div>
+            <div class="sidebar-card"><h4>Role</h4><div class="sidebar-pills"><span class="pill">Product Lead</span><span class="pill">Researcher</span><span class="pill">Designer</span></div></div>
+            <div class="sidebar-card"><h4>Tools</h4><div class="sidebar-pills"><span class="pill">Claude</span><span class="pill">v0</span><span class="pill">Vercel</span></div></div>
+            <div class="sidebar-card"><h4>Context</h4><div class="sidebar-pills"><span class="pill">Transition into UX for Healthcare, HXR Labs</span><span class="pill">22 Participants</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 2: Mama Compass -->
+    <div class="case-card" onclick="toggleCase(this)">
+      <div class="case-header">
+        <div>
+          <div class="case-meta">
+            <span class="case-num">02</span>
+            <span class="case-org">Mama Compass (Independent)</span>
+            <span class="case-duration">Jan 2026 to Present</span>
+          </div>
+          <h3 class="case-title">Mama Compass: A 0-to-1 Design Sprint on How Mothers Find and Trust Childcare Support</h3>
+          <p class="case-summary">A full product discovery sprint across the US, UK, and Philippines that moved from an open question to a tested prototype and a clear product opportunity.</p>
+        </div>
+        <div class="case-toggle">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-grid">
+          <div>
+            <div class="body-section">
+              <p class="body-label">The Challenge</p>
+              <div class="body-text">
+                <p>Mothers across very different care systems need childcare and support they can trust, yet there was no existing data, team, or product to start from. The work had to define the problem before proposing any solution.</p>
+              </div>
+            </div>
+            <div class="body-section">
+              <p class="body-label">Process</p>
+              <ul class="phase-list">
+                <li class="phase-item"><span class="phase-num">01</span><div class="phase-text"><strong>Assumption Mapping</strong>Built a 27-assumption tracker, ranking each by risk and certainty and prioritizing with MoSCoW so each sprint tested the riskiest unknowns first.</div></li>
+                <li class="phase-item"><span class="phase-num">02</span><div class="phase-text"><strong>Discovery Interviews</strong>Interviewed mothers across three countries about how they find, evaluate, and decide on support.</div></li>
+                <li class="phase-item"><span class="phase-num">03</span><div class="phase-text"><strong>Synthesis</strong>Built a six-cluster affinity map covering themes including digital tool gaps, trust dynamics, healthcare access barriers, community, and decision-making patterns.</div></li>
+                <li class="phase-item"><span class="phase-num">04</span><div class="phase-text"><strong>Prototype</strong>Built a low-fidelity prototype in Lovable using AI-assisted tools.</div></li>
+                <li class="phase-item"><span class="phase-num">05</span><div class="phase-text"><strong>Concept Testing</strong>Ran moderated concept tests to capture task completion and qualitative feedback for iteration.</div></li>
+              </ul>
+            </div>
+            <div class="body-section">
+              <p class="body-label">Key Insight</p>
+              <ul class="insight-list">
+                <li class="insight-item">Mothers sit between generic digital tools that feel alarming and professional support that is too slow and expensive.</li>
+                <li class="insight-item">The gap is trust, not information, pointing toward an AI-powered support product that bridges credibility, speed, and emotional safety.</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="impact-callout">
+              <h4>Outcome</h4>
+              <p>A validated product direction, a tested prototype, and a reusable risk-and-certainty framework for deciding what to build first.</p>
+            </div>
+            <div class="sidebar-card"><h4>Methods Used</h4><div class="sidebar-pills"><span class="pill">Google Design Sprint</span><span class="pill">Assumption Mapping</span><span class="pill">MoSCoW</span><span class="pill">Interviews</span><span class="pill">Affinity Mapping</span><span class="pill">Concept Testing</span></div></div>
+            <div class="sidebar-card"><h4>Role</h4><div class="sidebar-pills"><span class="pill">Product and UX Lead</span></div></div>
+            <div class="sidebar-card"><h4>Tools</h4><div class="sidebar-pills"><span class="pill">Lovable</span><span class="pill">FigJam</span><span class="pill">Miro</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE: GEN -->
+    <div class="case-card" onclick="toggleCase(this)">
+      <div class="case-header">
+        <div>
+          <div class="case-meta">
+            <span class="case-num">03</span>
+            <span class="case-org">Tech Fleet: Global Ecovillage Network</span>
+            <span class="case-duration">2026 to Present</span>
+          </div>
+          <h3 class="case-title">Agile Discovery for a Global NGO Moving from Information Site to Membership Platform</h3>
+          <p class="case-summary">Product strategy and research on a five-person cross-functional Agile team, helping a 30-year-old network find a path to sustainable, paid membership.</p>
+        </div>
+        <div class="case-toggle">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-grid">
+          <div>
+            <div class="body-section">
+              <p class="body-label">The Challenge</p>
+              <div class="body-text">
+                <p>The Global Ecovillage Network connects communities in more than 100 countries but has never run on a validated revenue model. It had just relaunched as a membership platform and moved several previously free features behind a paywall, which frustrated existing users.</p>
+                <p>The client named member conversion as the top priority. The team had to work out who GEN's audiences really are, why interested people do not convert, and what would make membership worth paying for, all within a short, volunteer-powered phase.</p>
+              </div>
+            </div>
+            <div class="body-section">
+              <p class="body-label">How We Worked</p>
+              <ul class="phase-list">
+                <li class="phase-item"><span class="phase-num">01</span><div class="phase-text"><strong>Agile Team Setup</strong>Ran two-week Scrum sprints with RACI planning, working agreements, a Notion Kanban backlog, client demos, and retrospectives.</div></li>
+                <li class="phase-item"><span class="phase-num">02</span><div class="phase-text"><strong>Vision, Scope, and Backlog</strong>Translated client intake goals into epics and features, then prioritized them around conversion. Added a revenue-model feature once it was clear every other monetization decision depended on it.</div></li>
+                <li class="phase-item"><span class="phase-num">03</span><div class="phase-text"><strong>Competitive Analysis</strong>Benchmarked GEN against direct and indirect competitors on value clarity, monetization, and the path from visitor to paying member.</div></li>
+                <li class="phase-item"><span class="phase-num">04</span><div class="phase-text"><strong>Conversion Research</strong>Combined regional stakeholder interviews across four continents, a newsletter survey, a conversion-focused UX audit, and Google Analytics review.</div></li>
+                <li class="phase-item"><span class="phase-num">05</span><div class="phase-text"><strong>Synthesis and Demo</strong>Brought findings together into recommendations and open questions for the client, sequenced into what fits this phase and what belongs in the next.</div></li>
+              </ul>
+            </div>
+            <div class="body-section">
+              <p class="body-label">Key Findings</p>
+              <ul class="insight-list">
+                <li class="insight-item">GEN is the only organization in its space trying to own the full journey from discovery to sustained participation. Every competitor covers only one or two pieces.</li>
+                <li class="insight-item">Friction in membership comes from uncertainty, not step count. People are unsure what they will get, whether a listing is active, or what happens after paying.</li>
+                <li class="insight-item">Listing freshness and verification are weak across the whole market, making them an unclaimed differentiator.</li>
+                <li class="insight-item">Paid membership raises separate questions of value, affordability, payment access, and how revenue flows between international and regional networks.</li>
+                <li class="insight-item">Language access shapes who can learn, participate, and represent their region.</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="impact-callout"><h4>Outcome</h4><p>A conversion-focused backlog, evidence-based audience and competitive insights, and prioritized recommendations that moved the client from assumptions toward a testable membership strategy.</p></div>
+            <div class="sidebar-card"><h4>Agile Practices</h4><div class="sidebar-pills"><span class="pill">Scrum</span><span class="pill">Sprint Planning</span><span class="pill">RACI</span><span class="pill">Backlog Management</span><span class="pill">Sprint Demos</span><span class="pill">Retrospectives</span></div></div>
+            <div class="sidebar-card"><h4>Methods Used</h4><div class="sidebar-pills"><span class="pill">Competitive Analysis</span><span class="pill">Stakeholder Interviews</span><span class="pill">Survey Design</span><span class="pill">UX Audit</span><span class="pill">Proto Personas</span><span class="pill">Epics and Features</span></div></div>
+            <div class="sidebar-card"><h4>Role</h4><div class="sidebar-pills"><span class="pill">Product Strategy</span><span class="pill">UX Research</span></div></div>
+            <div class="sidebar-card"><h4>Tools</h4><div class="sidebar-pills"><span class="pill">FigJam</span><span class="pill">Notion</span><span class="pill">Google Analytics</span><span class="pill">Google Forms</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 3: PlaceCal -->
+    <div class="case-card" onclick="toggleCase(this)">
+      <div class="case-header">
+        <div>
+          <div class="case-meta">
+            <span class="case-num">04</span>
             <span class="case-org">Geeks for Social Change</span>
-            <span class="case-duration">Feb 2026 - Present</span>
+            <span class="case-duration">Feb 2026 to Present</span>
           </div>
           <h3 class="case-title">Understanding How Community Organizations Adopt and Navigate Digital Coordination Tools</h3>
           <p class="case-summary">End-to-end UX research for PlaceCal, a community wealth-building platform, surfacing usability gaps and user needs to support its expansion from the UK to global contexts.</p>
         </div>
         <div class="case-toggle">+</div>
       </div>
-
       <div class="case-body">
         <div class="case-body-grid">
           <div>
@@ -700,37 +360,17 @@
                 <p>PlaceCal was built to help neighborhood organizations share local events and services, but adoption outside its original UK context was limited. The question was whether the platform's design assumptions held for community groups with different digital literacy levels, organizational structures, and coordination habits.</p>
               </div>
             </div>
-
             <div class="body-section">
               <p class="body-label">Research Process</p>
               <ul class="phase-list">
-                <li class="phase-item">
-                  <span class="phase-num">01</span>
-                  <div class="phase-text"><strong>Discovery and Contextual Inquiry</strong>Semi-structured interviews and contextual inquiry sessions with community organization coordinators to understand how they currently discover, evaluate, and adopt digital tools for local coordination.</div>
-                </li>
-                <li class="phase-item">
-                  <span class="phase-num">02</span>
-                  <div class="phase-text"><strong>Persona Development</strong>Built user personas grounded in research data to give the product and engineering team a shared, evidence-based picture of distinct community user groups and their diverging needs.</div>
-                </li>
-                <li class="phase-item">
-                  <span class="phase-num">03</span>
-                  <div class="phase-text"><strong>Journey Mapping</strong>Developed user journey maps capturing the end-to-end experience of community organizers using PlaceCal, surfacing drop-off points, friction moments, and unmet needs across the adoption arc.</div>
-                </li>
-                <li class="phase-item">
-                  <span class="phase-num">04</span>
-                  <div class="phase-text"><strong>Participatory Design and Usability Evaluation</strong>Facilitated participatory design sessions with community users and conducted moderated usability testing sessions to evaluate task completion, identify pain points, and surface navigation issues.</div>
-                </li>
-                <li class="phase-item">
-                  <span class="phase-num">05</span>
-                  <div class="phase-text"><strong>Heuristic Evaluation</strong>Conducted heuristic evaluations of the PlaceCal interface against established usability principles to surface accessibility and navigation issues ahead of user testing.</div>
-                </li>
-                <li class="phase-item">
-                  <span class="phase-num">06</span>
-                  <div class="phase-text"><strong>Synthesis and Readout</strong>Synthesized qualitative findings into research readouts and affinity maps, delivering actionable insights to cross-functional product and engineering stakeholders.</div>
-                </li>
+                <li class="phase-item"><span class="phase-num">01</span><div class="phase-text"><strong>Discovery and Contextual Inquiry</strong>Semi-structured interviews and contextual inquiry sessions with community organization coordinators to understand how they currently discover, evaluate, and adopt digital tools for local coordination.</div></li>
+                <li class="phase-item"><span class="phase-num">02</span><div class="phase-text"><strong>Persona Development</strong>Built user personas grounded in research data to give the product and engineering team a shared, evidence-based picture of distinct community user groups and their diverging needs.</div></li>
+                <li class="phase-item"><span class="phase-num">03</span><div class="phase-text"><strong>Journey Mapping</strong>Developed user journey maps capturing the end-to-end experience of community organizers using PlaceCal, surfacing drop-off points, friction moments, and unmet needs across the adoption arc.</div></li>
+                <li class="phase-item"><span class="phase-num">04</span><div class="phase-text"><strong>Participatory Design and Usability Evaluation</strong>Facilitated participatory design sessions with community users and conducted moderated usability testing sessions to evaluate task completion, identify pain points, and surface navigation issues.</div></li>
+                <li class="phase-item"><span class="phase-num">05</span><div class="phase-text"><strong>Heuristic Evaluation</strong>Conducted heuristic evaluations of the PlaceCal interface against established usability principles to surface accessibility and navigation issues ahead of user testing.</div></li>
+                <li class="phase-item"><span class="phase-num">06</span><div class="phase-text"><strong>Synthesis and Readout</strong>Synthesized qualitative findings into research readouts and affinity maps, delivering actionable insights to cross-functional product and engineering stakeholders.</div></li>
               </ul>
             </div>
-
             <div class="body-section">
               <p class="body-label">Key Findings</p>
               <ul class="insight-list">
@@ -741,51 +381,72 @@
               </ul>
             </div>
           </div>
-
           <div>
-            <div class="impact-callout">
-              <h4>Impact</h4>
-              <p>Research findings directly informed iterative platform improvements and roadmap prioritization for PlaceCal's global expansion strategy beyond the UK.</p>
-            </div>
-            <div class="sidebar-card">
-              <h4>Methods Used</h4>
-              <div class="sidebar-pills">
-                <span class="pill">Contextual Inquiry</span>
-                <span class="pill">Semi-structured Interviews</span>
-                <span class="pill">Usability Testing</span>
-                <span class="pill">Heuristic Evaluation</span>
-                <span class="pill">Journey Mapping</span>
-                <span class="pill">Participatory Design</span>
-                <span class="pill">Affinity Mapping</span>
-                <span class="pill">Persona Development</span>
-              </div>
-            </div>
-            <div class="sidebar-card">
-              <h4>Role</h4>
-              <div class="sidebar-pills">
-                <span class="pill">Lead UX Researcher</span>
-              </div>
-            </div>
-            <div class="sidebar-card">
-              <h4>Tools</h4>
-              <div class="sidebar-pills">
-                <span class="pill">Figma</span>
-                <span class="pill">FigJam</span>
-                <span class="pill">Miro</span>
-                <span class="pill">Otter.ai</span>
-              </div>
-            </div>
+            <div class="impact-callout"><h4>Impact</h4><p>Research findings directly informed iterative platform improvements and roadmap prioritization for PlaceCal's global expansion strategy beyond the UK.</p></div>
+            <div class="sidebar-card"><h4>Methods Used</h4><div class="sidebar-pills"><span class="pill">Contextual Inquiry</span><span class="pill">Semi-structured Interviews</span><span class="pill">Usability Testing</span><span class="pill">Heuristic Evaluation</span><span class="pill">Journey Mapping</span><span class="pill">Participatory Design</span><span class="pill">Affinity Mapping</span><span class="pill">Persona Development</span></div></div>
+            <div class="sidebar-card"><h4>Role</h4><div class="sidebar-pills"><span class="pill">Lead UX Researcher</span></div></div>
+            <div class="sidebar-card"><h4>Tools</h4><div class="sidebar-pills"><span class="pill">Figma</span><span class="pill">FigJam</span><span class="pill">Miro</span><span class="pill">Otter.ai</span></div></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- CASE 2: Maternal Health Asset Mapping -->
+    <!-- CASE 4: BMS -->
     <div class="case-card" onclick="toggleCase(this)">
       <div class="case-header">
         <div>
           <div class="case-meta">
-            <span class="case-num">02</span>
+            <span class="case-num">05</span>
+            <span class="case-org">Bristol Myers Squibb, R&amp;D</span>
+            <span class="case-duration">Summer 2024 &amp; Summer 2025</span>
+          </div>
+          <h3 class="case-title">Patient-Centered Research to Inform Advocacy Operations and Platform Strategy</h3>
+          <p class="case-summary">Generative and evaluative research with Patient Advocacy Groups to surface insights that shaped clinical study protocol design and a scalable operations playbook adopted across global R&amp;D teams.</p>
+        </div>
+        <div class="case-toggle">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-grid">
+          <div>
+            <div class="body-section">
+              <p class="body-label">The Challenge</p>
+              <div class="body-text">
+                <p>Bristol Myers Squibb's R&amp;D division needed to better understand how Patient Advocacy Groups (PAGs) experienced the PEER protocol review process and how their insights were being integrated into clinical trial design. The advocacy engagement model had grown organically across teams but lacked a consistent, research-informed operational framework.</p>
+              </div>
+            </div>
+            <div class="body-section">
+              <p class="body-label">Research Approach</p>
+              <ul class="phase-list">
+                <li class="phase-item"><span class="phase-num">01</span><div class="phase-text"><strong>Generative Research</strong>Designed and executed generative studies to understand patient and stakeholder needs across clinical development workflows, focusing on how PAGs currently participated in protocol review and where their input was absorbed or lost.</div></li>
+                <li class="phase-item"><span class="phase-num">02</span><div class="phase-text"><strong>Evaluative Research</strong>Conducted PEER protocol reviews with PAGs, evaluating the usability and clarity of the process from the patient advocacy perspective and identifying specific points where feedback was misaligned with how clinical teams received it.</div></li>
+                <li class="phase-item"><span class="phase-num">03</span><div class="phase-text"><strong>Cross-functional Stakeholder Interviews</strong>Conducted structured interviews across R&amp;D and Corporate Affairs teams to understand how research insights traveled through the organization and where they lost fidelity in translation.</div></li>
+                <li class="phase-item"><span class="phase-num">04</span><div class="phase-text"><strong>Synthesis and Playbook Development</strong>Synthesized findings into the Advocacy Operations Playbook, a strategic framework for consistent, research-informed engagement across global patient engagement teams.</div></li>
+              </ul>
+            </div>
+            <div class="body-section">
+              <p class="body-label">Key Findings</p>
+              <ul class="insight-list">
+                <li class="insight-item">PAG feedback was often gathered but not systematically actioned, creating a trust gap between advocacy groups and the clinical teams they engaged with.</li>
+                <li class="insight-item">The PEER review process lacked a shared framework for what constituted an actionable design improvement, leading to inconsistent uptake across programs.</li>
+                <li class="insight-item">Advocacy engagement worked best when researchers had pre-established relationships with PAGs rather than project-by-project outreach.</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="impact-callout"><h4>Impact</h4><p>The Advocacy Operations Playbook was adopted across global patient engagement teams within R&amp;D. Research findings informed experience strategy changes across the R&amp;D organization, presented directly to Corporate Affairs leadership.</p></div>
+            <div class="sidebar-card"><h4>Methods Used</h4><div class="sidebar-pills"><span class="pill">Generative Research</span><span class="pill">Evaluative Research</span><span class="pill">Stakeholder Interviews</span><span class="pill">PEER Protocol Review</span><span class="pill">Synthesis</span><span class="pill">Playbook Design</span></div></div>
+            <div class="sidebar-card"><h4>Role</h4><div class="sidebar-pills"><span class="pill">Global Patient Advocacy Intern</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 5: Maternal Health Asset Mapping -->
+    <div class="case-card" onclick="toggleCase(this)">
+      <div class="case-header">
+        <div>
+          <div class="case-meta">
+            <span class="case-num">06</span>
             <span class="case-org">Independent Research Project</span>
             <span class="case-duration">4 Months</span>
           </div>
@@ -794,47 +455,31 @@
         </div>
         <div class="case-toggle">+</div>
       </div>
-
       <div class="case-body">
         <div class="case-body-grid">
           <div>
             <div class="body-section">
               <p class="body-label">The Challenge</p>
               <div class="body-text">
-                <p>Hispanic mothers in Savannah and Chatham County, Georgia face compounding barriers to lactation support: language gaps, geographic mismatches, and fragmented community knowledge about available services. While resources exist, they are clustered in central Savannah while the highest-density Hispanic populations live in suburban areas like Garden City (18.6-21.6% Hispanic) and Port Wentworth (13.2%).</p>
+                <p>Hispanic mothers in Savannah and Chatham County, Georgia face compounding barriers to lactation support: language gaps, geographic mismatches, and fragmented community knowledge about available services. While resources exist, they are clustered in central Savannah while the highest-density Hispanic populations live in suburban areas like Garden City (18.6 to 21.6% Hispanic) and Port Wentworth (13.2%).</p>
                 <p>Initial research focused on cataloguing services, but demographic analysis revealed the real problem was not a lack of resources but a lack of shared language, access, and community infrastructure to make those resources findable and usable.</p>
               </div>
             </div>
-
             <div class="body-section">
               <p class="body-label">How Research Changed the Direction</p>
               <div class="body-text">
                 <p>The scope pivoted from static service listing to designing a toolkit for structured community conversations. Demographic data showing 65% Hispanic population growth in Chatham County since 2010 made it clear that a one-time map would quickly become outdated. Communities needed tools to keep having the conversation themselves.</p>
               </div>
             </div>
-
             <div class="body-section">
               <p class="body-label">Research and Design Process</p>
               <ul class="phase-list">
-                <li class="phase-item">
-                  <span class="phase-num">01</span>
-                  <div class="phase-text"><strong>Discovery</strong>Qualitative document analysis and provider interviews to understand how organizations currently address language barriers. Key finding: most relied on telephone interpretation lines or patient-provided translators rather than dedicated bilingual staff.</div>
-                </li>
-                <li class="phase-item">
-                  <span class="phase-num">02</span>
-                  <div class="phase-text"><strong>Analysis</strong>Affinity diagramming and demographic synthesis to identify themes. Three core gaps emerged: reliance on hospital-based translation, geographic mismatch between services and populations, and no shared vocabulary for discussing bilingual equity in maternal care.</div>
-                </li>
-                <li class="phase-item">
-                  <span class="phase-num">03</span>
-                  <div class="phase-text"><strong>Design</strong>Developed a low-fidelity Asset Mapping Toolkit designed for low-tech environments, including community conversation cards, a defining-terms activity to build shared language, an onboarding booklet, and a QGIS-based live mapping guide.</div>
-                </li>
-                <li class="phase-item">
-                  <span class="phase-num">04</span>
-                  <div class="phase-text"><strong>Build and Evaluate</strong>Built a live geospatial map using QGIS. Evaluated toolkit effectiveness through exploratory analysis and incorporated updated 2024 demographic estimates to validate design decisions.</div>
-                </li>
+                <li class="phase-item"><span class="phase-num">01</span><div class="phase-text"><strong>Discovery</strong>Qualitative document analysis and provider interviews to understand how organizations currently address language barriers. Key finding: most relied on telephone interpretation lines or patient-provided translators rather than dedicated bilingual staff.</div></li>
+                <li class="phase-item"><span class="phase-num">02</span><div class="phase-text"><strong>Analysis</strong>Affinity diagramming and demographic synthesis to identify themes. Three core gaps emerged: reliance on hospital-based translation, geographic mismatch between services and populations, and no shared vocabulary for discussing bilingual equity in maternal care.</div></li>
+                <li class="phase-item"><span class="phase-num">03</span><div class="phase-text"><strong>Design</strong>Developed a low-fidelity Asset Mapping Toolkit designed for low-tech environments, including community conversation cards, a defining-terms activity to build shared language, an onboarding booklet, and a QGIS-based live mapping guide.</div></li>
+                <li class="phase-item"><span class="phase-num">04</span><div class="phase-text"><strong>Build and Evaluate</strong>Built a live geospatial map using QGIS. Evaluated toolkit effectiveness through exploratory analysis and incorporated updated 2024 demographic estimates to validate design decisions.</div></li>
               </ul>
             </div>
-
             <div class="body-section">
               <p class="body-label">Key Findings</p>
               <ul class="insight-list">
@@ -845,135 +490,22 @@
               </ul>
             </div>
           </div>
-
           <div>
-            <div class="impact-callout">
-              <h4>Impact</h4>
-              <p>The toolkit addresses needs for approximately 25,000-27,000 Hispanic residents (8.9% of Chatham County's 307,336 population). It provides community leaders and healthcare providers with tools to facilitate ongoing, equity-focused conversations about breastfeeding support access.</p>
-            </div>
-            <div class="sidebar-card">
-              <h4>Methods Used</h4>
-              <div class="sidebar-pills">
-                <span class="pill">Provider Interviews</span>
-                <span class="pill">Document Analysis</span>
-                <span class="pill">Demographic Analysis</span>
-                <span class="pill">Affinity Diagramming</span>
-                <span class="pill">Competitive Research</span>
-                <span class="pill">Lo-fi Prototyping</span>
-                <span class="pill">Geospatial Mapping</span>
-              </div>
-            </div>
-            <div class="sidebar-card">
-              <h4>Role</h4>
-              <div class="sidebar-pills">
-                <span class="pill">Lead UX Researcher</span>
-                <span class="pill">Designer</span>
-              </div>
-            </div>
-            <div class="sidebar-card">
-              <h4>Tools</h4>
-              <div class="sidebar-pills">
-                <span class="pill">QGIS</span>
-                <span class="pill">U.S. Census Tools</span>
-                <span class="pill">Excel</span>
-                <span class="pill">Google Suite</span>
-              </div>
-            </div>
+            <div class="impact-callout"><h4>Impact</h4><p>The toolkit addresses needs for approximately 25,000 to 27,000 Hispanic residents (8.9% of Chatham County's 307,336 population). It provides community leaders and healthcare providers with tools to facilitate ongoing, equity-focused conversations about breastfeeding support access.</p></div>
+            <div class="sidebar-card"><h4>Methods Used</h4><div class="sidebar-pills"><span class="pill">Provider Interviews</span><span class="pill">Document Analysis</span><span class="pill">Demographic Analysis</span><span class="pill">Affinity Diagramming</span><span class="pill">Competitive Research</span><span class="pill">Lo-fi Prototyping</span><span class="pill">Geospatial Mapping</span></div></div>
+            <div class="sidebar-card"><h4>Role</h4><div class="sidebar-pills"><span class="pill">Lead UX Researcher</span><span class="pill">Designer</span></div></div>
+            <div class="sidebar-card"><h4>Tools</h4><div class="sidebar-pills"><span class="pill">QGIS</span><span class="pill">U.S. Census Tools</span><span class="pill">Excel</span><span class="pill">Google Suite</span></div></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- CASE 3: BMS -->
+    <!-- CASE 6: Nigeria Financial Onboarding -->
     <div class="case-card" onclick="toggleCase(this)">
       <div class="case-header">
         <div>
           <div class="case-meta">
-            <span class="case-num">03</span>
-            <span class="case-org">Bristol Myers Squibb, R&amp;D</span>
-            <span class="case-duration">Summer 2024 &amp; Summer 2025</span>
-          </div>
-          <h3 class="case-title">Patient-Centered Research to Inform Advocacy Operations and Platform Strategy</h3>
-          <p class="case-summary">Generative and evaluative research with Patient Advocacy Groups to surface insights that shaped clinical study protocol design and a scalable operations playbook adopted across global R&D teams.</p>
-        </div>
-        <div class="case-toggle">+</div>
-      </div>
-
-      <div class="case-body">
-        <div class="case-body-grid">
-          <div>
-            <div class="body-section">
-              <p class="body-label">The Challenge</p>
-              <div class="body-text">
-                <p>Bristol Myers Squibb's R&D division needed to better understand how Patient Advocacy Groups (PAGs) experienced the PEER protocol review process and how their insights were being integrated into clinical trial design. The advocacy engagement model had grown organically across teams but lacked a consistent, research-informed operational framework.</p>
-              </div>
-            </div>
-
-            <div class="body-section">
-              <p class="body-label">Research Approach</p>
-              <ul class="phase-list">
-                <li class="phase-item">
-                  <span class="phase-num">01</span>
-                  <div class="phase-text"><strong>Generative Research</strong>Designed and executed generative studies to understand patient and stakeholder needs across clinical development workflows, focusing on how PAGs currently participated in protocol review and where their input was absorbed or lost.</div>
-                </li>
-                <li class="phase-item">
-                  <span class="phase-num">02</span>
-                  <div class="phase-text"><strong>Evaluative Research</strong>Conducted PEER protocol reviews with PAGs, evaluating the usability and clarity of the process from the patient advocacy perspective and identifying specific points where feedback was misaligned with how clinical teams received it.</div>
-                </li>
-                <li class="phase-item">
-                  <span class="phase-num">03</span>
-                  <div class="phase-text"><strong>Cross-functional Stakeholder Interviews</strong>Conducted structured interviews across R&D and Corporate Affairs teams to understand how research insights traveled through the organization and where they lost fidelity in translation.</div>
-                </li>
-                <li class="phase-item">
-                  <span class="phase-num">04</span>
-                  <div class="phase-text"><strong>Synthesis and Playbook Development</strong>Synthesized findings into the Advocacy Operations Playbook, a strategic framework for consistent, research-informed engagement across global patient engagement teams.</div>
-                </li>
-              </ul>
-            </div>
-
-            <div class="body-section">
-              <p class="body-label">Key Findings</p>
-              <ul class="insight-list">
-                <li class="insight-item">PAG feedback was often gathered but not systematically actioned, creating a trust gap between advocacy groups and the clinical teams they engaged with.</li>
-                <li class="insight-item">The PEER review process lacked a shared framework for what constituted an actionable design improvement, leading to inconsistent uptake across programs.</li>
-                <li class="insight-item">Advocacy engagement worked best when researchers had pre-established relationships with PAGs rather than project-by-project outreach.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div>
-            <div class="impact-callout">
-              <h4>Impact</h4>
-              <p>The Advocacy Operations Playbook was adopted across global patient engagement teams within R&D. Research findings informed experience strategy changes across the R&D organization, presented directly to Corporate Affairs leadership.</p>
-            </div>
-            <div class="sidebar-card">
-              <h4>Methods Used</h4>
-              <div class="sidebar-pills">
-                <span class="pill">Generative Research</span>
-                <span class="pill">Evaluative Research</span>
-                <span class="pill">Stakeholder Interviews</span>
-                <span class="pill">PEER Protocol Review</span>
-                <span class="pill">Synthesis</span>
-                <span class="pill">Playbook Design</span>
-              </div>
-            </div>
-            <div class="sidebar-card">
-              <h4>Role</h4>
-              <div class="sidebar-pills">
-                <span class="pill">UX Research Intern</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CASE 4: Nigeria Financial Onboarding -->
-    <div class="case-card" onclick="toggleCase(this)">
-      <div class="case-header">
-        <div>
-          <div class="case-meta">
-            <span class="case-num">04</span>
+            <span class="case-num">07</span>
             <span class="case-org">Financial Start-up, Lagos (Freelance)</span>
             <span class="case-duration">Freelance</span>
           </div>
@@ -982,7 +514,6 @@
         </div>
         <div class="case-toggle">+</div>
       </div>
-
       <div class="case-body">
         <div class="case-body-grid">
           <div>
@@ -992,25 +523,14 @@
                 <p>A financial start-up in Lagos needed to onboard new customers in a way that met Central Bank of Nigeria (CBN) requirements for Microfinance banks, including BVN verification and identity documentation, while remaining accessible to users who may not have standard identification. The onboarding experience needed to balance compliance, usability, and trust.</p>
               </div>
             </div>
-
             <div class="body-section">
               <p class="body-label">Research Approach</p>
               <ul class="phase-list">
-                <li class="phase-item">
-                  <span class="phase-num">01</span>
-                  <div class="phase-text"><strong>User Segmentation</strong>Aligned with internal and external stakeholders to segment users by their familiarity with the onboarding process and documentation access, identifying two core segments: internal users with process knowledge and external users experiencing the flow for the first time.</div>
-                </li>
-                <li class="phase-item">
-                  <span class="phase-num">02</span>
-                  <div class="phase-text"><strong>Feature Prioritization</strong>Ran a card sorting exercise with 6 participants, including 3 with prior onboarding experience, to surface what features users prioritized and why. Participants ranked features by importance to reveal gaps between the designed experience and user expectations.</div>
-                </li>
-                <li class="phase-item">
-                  <span class="phase-num">03</span>
-                  <div class="phase-text"><strong>Qualitative Interviews</strong>Post-sorting interviews explored participant thoughts on the onboarding process, navigation difficulties, reasons behind feature prioritization choices, and suggestions for improvement.</div>
-                </li>
+                <li class="phase-item"><span class="phase-num">01</span><div class="phase-text"><strong>User Segmentation</strong>Aligned with internal and external stakeholders to segment users by their familiarity with the onboarding process and documentation access, identifying two core segments: internal users with process knowledge and external users experiencing the flow for the first time.</div></li>
+                <li class="phase-item"><span class="phase-num">02</span><div class="phase-text"><strong>Feature Prioritization</strong>Ran a card sorting exercise with 6 participants, including 3 with prior onboarding experience, to surface what features users prioritized and why. Participants ranked features by importance to reveal gaps between the designed experience and user expectations.</div></li>
+                <li class="phase-item"><span class="phase-num">03</span><div class="phase-text"><strong>Qualitative Interviews</strong>Post-sorting interviews explored participant thoughts on the onboarding process, navigation difficulties, reasons behind feature prioritization choices, and suggestions for improvement.</div></li>
               </ul>
             </div>
-
             <div class="body-section">
               <p class="body-label">Key Findings and Recommendations</p>
               <ul class="insight-list">
@@ -1020,32 +540,10 @@
               </ul>
             </div>
           </div>
-
           <div>
-            <div class="sidebar-card">
-              <h4>Methods Used</h4>
-              <div class="sidebar-pills">
-                <span class="pill">Card Sorting</span>
-                <span class="pill">Qualitative Interviews</span>
-                <span class="pill">Feature Prioritization</span>
-                <span class="pill">User Segmentation</span>
-                <span class="pill">Stakeholder Alignment</span>
-              </div>
-            </div>
-            <div class="sidebar-card">
-              <h4>Role</h4>
-              <div class="sidebar-pills">
-                <span class="pill">Freelance UX Researcher</span>
-              </div>
-            </div>
-            <div class="sidebar-card">
-              <h4>Context</h4>
-              <div class="sidebar-pills">
-                <span class="pill">6 Participants</span>
-                <span class="pill">Cross-functional Team</span>
-                <span class="pill">CBN Compliance Context</span>
-              </div>
-            </div>
+            <div class="sidebar-card"><h4>Methods Used</h4><div class="sidebar-pills"><span class="pill">Card Sorting</span><span class="pill">Qualitative Interviews</span><span class="pill">Feature Prioritization</span><span class="pill">User Segmentation</span><span class="pill">Stakeholder Alignment</span></div></div>
+            <div class="sidebar-card"><h4>Role</h4><div class="sidebar-pills"><span class="pill">Freelance UX Researcher</span></div></div>
+            <div class="sidebar-card"><h4>Context</h4><div class="sidebar-pills"><span class="pill">6 Participants</span><span class="pill">Cross-functional Team</span><span class="pill">CBN Compliance Context</span></div></div>
           </div>
         </div>
       </div>
@@ -1056,13 +554,13 @@
 
 <hr class="divider">
 
-<!-- CURRENT WORK -->
 <div id="current">
   <div class="current-block section">
     <p class="section-label">Currently</p>
-    <h2 class="section-title">UX Researcher at Geeks for Social Change</h2>
+    <h2 class="section-title">Where I'm building now</h2>
+    <p class="current-sub" style="margin-top:0;">UX Researcher, Geeks for Social Change</p>
     <div class="body-text">
-      <p>I am currently embedded with the PlaceCal product and engineering team, running the full research arc for a community coordination platform designed to expand globally while staying rooted in the needs of local organizations. This role sits at the intersection of product research and community-centered design.</p>
+      <p>I am embedded with the PlaceCal product and engineering team, running the full research arc for a community coordination platform designed to expand globally while staying rooted in the needs of local organizations.</p>
     </div>
     <ul class="current-bullets">
       <li>Conduct discovery research through contextual inquiry and semi-structured interviews</li>
@@ -1070,32 +568,42 @@
       <li>Develop user journey maps highlighting drop-off points and unmet needs</li>
       <li>Facilitate participatory design sessions and usability evaluations</li>
       <li>Conduct heuristic evaluations against usability principles</li>
-      <li>Plan and moderate usability testing sessions with community users</li>
-      <li>Synthesize findings into research readouts and affinity maps</li>
+      <li>Synthesize findings into research readouts that inform roadmap priorities</li>
     </ul>
+    <p class="current-sub">Product and UX Lead, early-stage marketplace startup</p>
+    <div class="body-text">
+      <p>I lead MVP definition, discovery research, and cross-functional working sessions for a two-sided marketplace currently in stealth. Details will follow at launch.</p>
+    </div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- ABOUT -->
 <div class="section" id="about">
   <p class="section-label">About</p>
   <h2 class="section-title">Background</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>I am a UX Researcher and doctoral candidate in Public Health at Georgia Southern University. My work sits at the intersection of human-centered design, health equity, and community experience. Before coming to UX research through product organizations, I spent years conducting qualitative and mixed-methods research in academic, clinical, and community settings.</p>
-      <p>That background gives me something specific: I know how to research users whose experiences are shaped by systems they did not design and cannot easily opt out of. Whether that is patients navigating clinical trial processes, community organizations working with underfunded digital tools, or citizens trying to engage with political institutions that were not built for them, I know how to surface what is actually happening and why it matters.</p>
-      <p>I have worked with Bristol Myers Squibb, Geeks for Social Change, Denali Therapeutics, and community organizations across Georgia and Nigeria. I bring a researcher's rigor and a storyteller's instinct to every study I run.</p>
+      <p>I am an Agile product builder and UX researcher, and a doctoral candidate in Public Health at Georgia Southern University. My work sits at the intersection of UX research, product strategy, and health equity. I have spent more than seven years conducting qualitative and mixed-methods research in academic, clinical, and community settings, and I bring that research practice into every product decision.</p>
+      <p>That background gives me something specific: I know how to understand users whose experiences are shaped by systems they did not design and cannot easily opt out of, and how to turn that understanding into product decisions. Whether that is patients navigating clinical trial processes, mothers deciding who to trust for support, or community organizations working with underfunded digital tools, I surface what is actually happening and build toward what would help.</p>
+      <p>I have worked with Bristol Myers Squibb, Geeks for Social Change, Denali Therapeutics, and community organizations across Georgia and Nigeria. I use AI tools daily to move faster from insight to working prototype, with human judgment owning accuracy and ethics.</p>
     </div>
     <div>
+      <div class="skills-group">
+        <h4>Product</h4>
+        <ul>
+          <li>MVP scoping and requirements definition</li>
+          <li>Success metrics and prioritization (MoSCoW, risk and certainty)</li>
+          <li>Google Design Sprints and Agile delivery</li>
+          <li>AI-assisted prototyping</li>
+        </ul>
+      </div>
       <div class="skills-group">
         <h4>Research Methods</h4>
         <ul>
           <li>Semi-structured and ethnographic interviews</li>
           <li>Usability testing (moderated and unmoderated)</li>
-          <li>Heuristic evaluation</li>
-          <li>Contextual inquiry</li>
+          <li>Heuristic evaluation and contextual inquiry</li>
           <li>Participatory action research</li>
           <li>Journey mapping and persona development</li>
           <li>Survey design and analysis</li>
@@ -1105,7 +613,8 @@
       <div class="skills-group">
         <h4>Tools</h4>
         <ul>
-          <li>Figma, FigJam, Miro</li>
+          <li>Claude, v0, Lovable</li>
+          <li>Figma, FigJam, Miro, Jira</li>
           <li>NVivo, Atlas.ti, Otter.ai</li>
           <li>Qualtrics, SurveyMonkey, SPSS</li>
           <li>Great Question, User Interviews</li>
@@ -1113,10 +622,20 @@
         </ul>
       </div>
       <div class="skills-group">
+        <h4>Education</h4>
+        <ul>
+          <li>DrPH, Community Health Behavior and Education, Georgia Southern University (expected Dec 2026)</li>
+          <li>MA, Social Sciences (Sociology), Georgia Southern University</li>
+          <li>MA, Liberal Studies, East Tennessee State University</li>
+          <li>BA, English and Literary Studies, Ekiti State University, Nigeria</li>
+        </ul>
+      </div>
+      <div class="skills-group">
         <h4>Certifications</h4>
         <ul>
           <li>CHES: Certified Health Education Specialist</li>
           <li>Product Strategy Micro-Cert, Product School</li>
+          <li>AI-Enabled UX Research Masterclass</li>
           <li>Agile UX Masterclass, Tech Fleet (2026)</li>
           <li>Service Leadership Masterclass, Tech Fleet (2026)</li>
         </ul>
@@ -1127,38 +646,33 @@
 
 <hr class="divider">
 
-<!-- PUBLICATIONS -->
 <div class="section" id="publications">
   <p class="section-label">Research Output</p>
-  <h2 class="section-title">Selected Publications</h2>
+  <h2 class="section-title">Publications</h2>
   <div class="pub-list">
-    <div class="pub-item">
-      <span class="pub-title">Postpartum psychosis resulting in infanticide: missed opportunities in screening</span>
-      Alford et al. (2025). Archives of Women's Mental Health, 28, 297-308.
-    </div>
-    <div class="pub-item">
-      <span class="pub-title">Barriers to help-seeking behavior for maternal mental health disorders</span>
-      Oloyede, T.F. &amp; Chopak-Foss, J. (2024). Journal of the Georgia Public Health Association, 10(1).
-    </div>
-    <div class="pub-item">
-      <span class="pub-title">Adverse childhood experiences and developmental disorders</span>
-      Alford et al. (2024). Children's Health Care, 53(4), 475-487.
-    </div>
-    <div class="pub-item">
-      <span class="pub-title">Telemedicine for obesity management: systematic review and meta-analysis</span>
-      Adebile et al. (2024). Journal of Telemedicine and Telecare, 31(8), 1078-1090.
-    </div>
+    <div class="pub-item"><span class="pub-title">Community health worker-integrated model for sickle cell disease management</span>Mayo-Gamble, T., Ugwu, D., Oloyede, T., et al. (2026). JMIR Research Protocols, 15(1), e82663.</div>
+    <div class="pub-item"><span class="pub-title">Social determinants of health and adverse childhood experiences in Georgia</span>Shah et al. (2026). Healthcare, 14(5), 667.</div>
+    <div class="pub-item"><span class="pub-title">Postpartum psychosis resulting in infanticide: missed opportunities in screening</span>Alford et al. (2025). Archives of Women's Mental Health, 28(2), 297-308.</div>
+    <div class="pub-item"><span class="pub-title">Exploring income inequality as a predictor of mental, emotional, developmental, behavioural and physical health outcomes in US children</span>Nwaonumah et al. (2025). Child: Care, Health and Development, 51(6), e70179.</div>
+    <div class="pub-item"><span class="pub-title">Telemedicine for obesity management: systematic review and meta-analysis</span>Adebile et al. (2024). Journal of Telemedicine and Telecare, 31(8), 1078-1090.</div>
+    <div class="pub-item"><span class="pub-title">Adverse childhood experiences and developmental disorders</span>Alford et al. (2024). Children's Health Care, 53(4), 475-487.</div>
+    <div class="pub-item"><span class="pub-title">Barriers to help-seeking behavior for maternal mental health disorders</span>Oloyede, T.F. &amp; Chopak-Foss, J. (2024). Journal of the Georgia Public Health Association, 10(1), 44-49.</div>
+  </div>
+  <p class="body-label" style="margin-top:40px;">Book Chapters and Encyclopedia Entries</p>
+  <div class="pub-list">
+    <div class="pub-item"><span class="pub-title">“I Felt Almost Like A Robot”: The control of maternal bodies and maternal health in Georgia</span>Altman, H.M. &amp; Oloyede, T.F. (2024). In Agency and Bodily Autonomy in Systems of Care, Chapter 7. Lexington Books.</div>
+    <div class="pub-item"><span class="pub-title">Multiple Roles and Women's Health; Stress and Disasters</span>Van Willigen, M. &amp; Oloyede, T. (2025). Wiley Blackwell Encyclopedia of Health, Illness, Behavior, and Society.</div>
+    <p class="body-text" style="margin-top:8px;">Also co-author of six peer-reviewed commentaries in Eagles Talking About Public Health (ETAPH), 2023 to 2025.</p>
   </div>
 </div>
 
-<!-- FOOTER -->
 <hr class="divider">
 <footer>
   <div class="footer-name">Tobi Oloyede, DrPH(c), CHES</div>
   <div class="footer-contact">
     <a href="mailto:oloyedetobi99@gmail.com">oloyedetobi99@gmail.com</a><br>
     +1 (678) 372-5126<br>
-    <a href="https://www.linkedin.com/in/tobi-oloyede-ches-44808a147/" target="_blank">LinkedIn Profile</a>
+    <a href="https://www.linkedin.com/in/tobi-oloyede-ches-44808a147/" target="_blank" rel="noopener">LinkedIn Profile</a>
   </div>
 </footer>
 
@@ -1169,6 +683,5 @@
     if (!isOpen) card.classList.add('open');
   }
 </script>
-
 </body>
 </html>
